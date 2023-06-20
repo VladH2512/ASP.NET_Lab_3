@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width"/>
+    <title>List</title>
+</head>
+
+<body>
+    <h2>Весь одяг</h2>
+    <div class="row mt-5 mb-2">
+    @{
+        foreach (var Cloth in Model.allClothes){
+        <div class="col-lg-4 ">
+            <img class="img-thumbnail" src="@Cloth.Img" alt="@Cloth.Name" />
+            <h2>Одяг: @Cloth.Name</h2>
+            <p>Опис:</p>
+            @foreach (var line in Cloth.Description.Split('\n'))
+            {
+                <p>@line</p>
+            }
+            <p>Ціна: @Cloth.Price</p>
+        </div>
+        }
+    }
+    </div>
+</body>
+</html>
